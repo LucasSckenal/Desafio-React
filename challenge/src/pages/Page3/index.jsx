@@ -1,35 +1,30 @@
 import pgImage from "../../imgs/pg3.png";
 import counter from "../../imgs/pg3.svg";
-import { Tela } from "./style";
-
+import { Banner } from "./style";
+import { Buttons, Counter, Line, Tela, TelaDentro } from "../../style";
 
 const Pg3 = () => {
   return (
     <Tela>
-      <section className="Tela-dentro">
-    <div className="imgContainer">
-      <img src={pgImage} alt="" />
-     </div>
+      <TelaDentro>
+        <Banner>
+          <img src={pgImage} alt="" />
 
-     <h1 className="title">
-      Buy & Sell Tools
-     </h1>
+          <h2>Buy & Sell Tools</h2>
 
-     <p className="paragrafo">
-      Buy & sell good quality products for your beautiful plants
-     </p>
+          <p className="paragrafo">
+            Buy & sell good quality products for your beautiful plants
+          </p>
+        </Banner>
 
-     <div className="counter">
-     <img src={counter} alt="" />
-     </div>
+        <Counter src={counter} alt="" />
+        <Buttons>
+          <button className="button">Get started</button>
+        </Buttons>
+        <Line />
+      </TelaDentro>
+    </Tela>
+  );
+};
 
-     <button className="button">Get started</button>
-
-      <div className="black">
-      </div>
-    </section>  
-  </Tela>
-  )
-}
-
-export default Pg3
+export default Pg3;

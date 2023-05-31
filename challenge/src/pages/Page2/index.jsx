@@ -1,42 +1,31 @@
-import { Link } from "react-router-dom";
 import pgImage from "../../imgs/pg2.png";
 import counter from "../../imgs/pg2.svg";
-import { Tela } from "./style";
+import { Banner, Buttons, Counter, Line, Tela, TelaDentro } from "../../style";
 
-
-const Pg2 = () => {
+// eslint-disable-next-line react/prop-types
+const Pg2 = ({ changePage }) => {
   return (
     <Tela>
-      <section className="Tela-dentro">
-    <div className="imgContainer">
-      <img src={pgImage} alt="" />
-     </div>
+      <TelaDentro>
+        <Banner>
+          <img src={pgImage} alt="" />
 
-     <h1 className="title">
-      Get fast & safe delivery
-     </h1>
+          <h1 className="title">Get fast & safe delivery</h1>
 
-     <p className="paragrafo">
-      Get good quality products for your plants 
-     </p>
+          <p className="paragrafo">Get good quality products for your plants</p>
+        </Banner>
 
-     <div className="counter">
-     <img src={counter} alt="" />
-     </div>
+        <Counter src={counter} alt="" />
 
-     <button className="button">
-          <Link to="/page3">Continue</Link>
-        </button>
+        <Buttons>
+          <button onClick={() => changePage("pg3")}>Continue</button>
 
-        <a className="skip">
-          <Link to="/page3">Skip</Link>
-        </a>
+          <a onClick={() => changePage("pg3")}>Skip</a>
+        </Buttons>
+        <Line />
+      </TelaDentro>
+    </Tela>
+  );
+};
 
-      <div className="black"></div>
-
-    </section>  
-  </Tela>
-  )
-}
-
-export default Pg2
+export default Pg2;
